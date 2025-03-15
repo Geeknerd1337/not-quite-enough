@@ -22,8 +22,6 @@ namespace Perception.Engine
         /// </summary>
         public static Entity Pawn { get; set; }
 
-        public List<string> ServicesToLoad = new List<string>();
-
         public virtual void Awake()
         {
             //Create a singleton instance of the game manager that persists throughout the entire game.
