@@ -58,6 +58,7 @@ namespace Perception.Engine
             AddService<UIService>();
             AddService<SettingsService>();
             AddService<EventService>();
+            AddService<ControlService>();
         }
 
         public void AddService<T>() where T : PerceptionService
