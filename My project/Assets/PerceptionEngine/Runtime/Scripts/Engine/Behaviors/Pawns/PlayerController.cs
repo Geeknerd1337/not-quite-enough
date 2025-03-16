@@ -15,57 +15,57 @@ namespace Perception.Engine
 		private Player _player;
 
 		[Header("Movement")]
-		public float MaxStableMoveSpeed 		= 4f;
-		public float StableMovementSharpness 	= 15f;
-		public float OrientationSharpness 		= 10f;
+		public float MaxStableMoveSpeed = 4f;
+		public float StableMovementSharpness = 15f;
+		public float OrientationSharpness = 10f;
 
 		[Header("Running")]
-		public bool CanRun						= true;
-		public bool IsRunning 					= false;
-		public float MaxRunSpeed 				= 6f;
+		public bool CanRun = true;
+		public bool IsRunning = false;
+		public float MaxRunSpeed = 6f;
 
 		[Header("Crouching")]
-		public float MaxCrouchSpeed 			= 2f;
-		public bool IsCrouching 				= false;
-		private bool _shouldBeCrouching 		= false;
-		public bool _crouchToggled 				= false;
-		public float CrouchedCameraHeight 		= 1f;
-		private bool _inCrouchVolume 			= false;
+		public float MaxCrouchSpeed = 2f;
+		public bool IsCrouching = false;
+		private bool _shouldBeCrouching = false;
+		public bool _crouchToggled = false;
+		public float CrouchedCameraHeight = 1f;
+		private bool _inCrouchVolume = false;
 		public SoundObject CrouchSound;
 		public float CrouchVignetteIntensity = 1f;
-		private CrouchVignetteEffect _crouchVignette;
+		//private CrouchVignetteEffect _crouchVignette;
 
 		// Use these over the Motor's initial Height/Radius variables.
 		[Header("Capsule Dimensions")]
-		public float StandingCapsuleHeight 		= 2f;
-		public float CrouchedCapsuleHeight 		= 1f;
-		public float CapsuleRadius 				= 0.5f;
+		public float StandingCapsuleHeight = 2f;
+		public float CrouchedCapsuleHeight = 1f;
+		public float CapsuleRadius = 0.5f;
 
 		[Header("Air")]
-		public float MaxAirMoveSpeed 			= 15f;
-		public float AirAccelerationSpeed 		= 15f;
-		public float Drag 						= 0.1f;
+		public float MaxAirMoveSpeed = 15f;
+		public float AirAccelerationSpeed = 15f;
+		public float Drag = 0.1f;
 
 		[Header("Misc")]
-		public Vector3 Gravity 					= new Vector3(0, -30f, 0);
+		public Vector3 Gravity = new Vector3(0, -30f, 0);
 		public Transform MeshRoot;
-		
+
 		public Transform CameraFollowPoint;
 		public float CameraStandingFollowHeight = 2f;
-		public float CameraCrouchFollowHeight   = 1f;
-		public float AdditionalCrouchHeight 	= 0f; // Custom height adjustments for vents/desks.
-		private float CameraFollowSpeed 		= 8f; // This just handles the transition for local position Y on the camera target.
+		public float CameraCrouchFollowHeight = 1f;
+		public float AdditionalCrouchHeight = 0f; // Custom height adjustments for vents/desks.
+		private float CameraFollowSpeed = 8f; // This just handles the transition for local position Y on the camera target.
 		private float _targetCameraFollowHeight;
 		private float _currentCameraFollowHeight;
 
 		public Vector3 _lookInputVector;
 		private PlayerInputHelper _inputs;
 		private Vector3 _moveInputVector;
-		private Vector3 _internalVelocityAdd 	= Vector3.zero;
-		private Collider[] _probedColliders 	= new Collider[8];
-		private RaycastHit[] _probedHits 		= new RaycastHit[8];
+		private Vector3 _internalVelocityAdd = Vector3.zero;
+		private Collider[] _probedColliders = new Collider[8];
+		private RaycastHit[] _probedHits = new RaycastHit[8];
 
-		private bool _inputDisabled				= false;
+		private bool _inputDisabled = false;
 
 		[Header("Void Recovery")]
 		public bool DisableVoidRecovery = false; // Allows you to temp disable this option in case the level has a massive player y displacement.
@@ -76,8 +76,8 @@ namespace Perception.Engine
 		private float voidYThreshold = -500f; // Adjust magic number as needed.
 
 		[Header("Debug Settings")]
-		public bool NoClip 						= false;
-		public float NoClipSpeed 				= 10f;
+		public bool NoClip = false;
+		public float NoClipSpeed = 10f;
 		private Vector3 _noClipVelocity;
 
 		[HideInInspector]
@@ -87,11 +87,11 @@ namespace Perception.Engine
 		{
 			base.Awake();
 
-			_player 		= this.GetComponent<Player>();
-			Motor 			= this.GetComponent<KinematicCharacterMotor>();
-			Control 		= GameManager.GetService<ControlService>();
-			PlayerCamera 	= GameManager.GetService<CameraService>().Camera;
-			_crouchVignette = PlayerCamera.GetComponent<CrouchVignetteEffect>();
+			_player = this.GetComponent<Player>();
+			Motor = this.GetComponent<KinematicCharacterMotor>();
+			Control = GameManager.GetService<ControlService>();
+			PlayerCamera = GameManager.GetService<CameraService>().Camera;
+			//_crouchVignette = PlayerCamera.GetComponent<CrouchVignetteEffect>();
 
 			if (Motor == null)
 			{
@@ -116,7 +116,7 @@ namespace Perception.Engine
 
 		public override void BuildInput()
 		{
-			if(_inputDisabled) return;
+			if (_inputDisabled) return;
 			base.BuildInput();
 
 			Vector2 _movementInput = Control.PlayerMovementAction.ReadValue<Vector2>();
@@ -172,7 +172,7 @@ namespace Perception.Engine
 		/// </summary>
 		private void CheckCrouch()
 		{
-			if(NoClip) return;
+			if (NoClip) return;
 
 			// Hold to crouch
 			if (!IsRunning && _inputs.Crouch)
@@ -217,14 +217,14 @@ namespace Perception.Engine
 			Motor.SetCapsuleDimensions(CapsuleRadius, CrouchedCapsuleHeight, CrouchedCapsuleHeight * 0.5f);
 			MeshRoot.localScale = new Vector3(1f, CrouchedCapsuleHeight / StandingCapsuleHeight, 1f);
 			_targetCameraFollowHeight = CameraCrouchFollowHeight;
-			if(CrouchSound != null)
+			if (CrouchSound != null)
 			{
-				PerceptionAudio.FromGameObject(CrouchSound, this.gameObject, false);
+				PerceptionAudio.FromGameObject(CrouchSound, this.gameObject);
 			}
-			if(_crouchVignette != null)
-			{
-				_crouchVignette.SetVignetteIntensity(CrouchVignetteIntensity);
-			}
+			//if(_crouchVignette != null)
+			//{
+			//	_crouchVignette.SetVignetteIntensity(CrouchVignetteIntensity);
+			//}
 		}
 
 		private void Uncrouch()
@@ -253,14 +253,11 @@ namespace Perception.Engine
 				_targetCameraFollowHeight = CameraStandingFollowHeight;
 				IsCrouching = false;
 				//Debug.Log("No obstruction, uncrouched successfully");
-				if(CrouchSound != null)
+				if (CrouchSound != null)
 				{
-					PerceptionAudio.FromGameObject(CrouchSound, this.gameObject, false);
+					PerceptionAudio.FromGameObject(CrouchSound, this.gameObject);
 				}
-				if(_crouchVignette != null)
-				{
-					_crouchVignette.SetVignetteIntensity(0f);
-				}
+
 			}
 
 
@@ -400,7 +397,7 @@ namespace Perception.Engine
 				Crouch();
 			}
 
-			if(!DisableVoidRecovery)
+			if (!DisableVoidRecovery)
 			{
 				CheckForVoidFall();
 			}
@@ -440,78 +437,8 @@ namespace Perception.Engine
 		}
 
 
-		private void CheckForVoidFall()
-		{
-			
-			if (_player.IsDead)
-			{
-				return;
-			}
-
-			if (Motor.GroundingStatus.IsStableOnGround)
-			{
-				timeSinceLastCheck += Time.deltaTime;
-				
-				if (timeSinceLastCheck >= positionCheckInterval)
-				{
-					safePositionHistory.Enqueue(Motor.TransientPosition);
-					
-					if (safePositionHistory.Count > 10)
-					{
-						safePositionHistory.Dequeue();
-					}
-					timeSinceLastCheck = 0;
-				}
-			}
-
-			if (Motor.TransientPosition.y < voidYThreshold)
-			{
-				if (InstantKillOnVoidFall)
-				{
-					_player.KillPlayer();
-					return;
-				}
-				
-				RecoverFromVoid();
-			}
-		}
-
-		private void RecoverFromVoid()
-		{
-			
-			Vector3[] positions = safePositionHistory.ToArray();
-			
-			for (int i = positions.Length - 1; i >= 0; i--)
-			{
-				Vector3 recoveryPosition = positions[i];
-				
-				if (recoveryPosition.y < voidYThreshold)
-				{
-					safePositionHistory.Dequeue();
-					continue;
-				}
-
-				Vector3 finalPosition = recoveryPosition + (Vector3.up * 0.5f);
-
-				Motor.transform.position = finalPosition;
-                Motor.SetTransientPosition(finalPosition);
-				Motor.SetPosition(finalPosition);
-
-				// Force tripod and camera position
-                FirstpersonTripod tripod = _player.GetComponent<FirstpersonTripod>();
-                if (tripod != null)
-                {
-                    tripod.SetInstantPosition(finalPosition);
-                }
 
 
-				return;
-			}
-
-			// If there are no legal positions, just kill the player.
-			_player.KillPlayer();
-
-		}
 
 		private void NoClipMove(ref Vector3 currentVelocity, float deltaTime)
 		{
@@ -559,7 +486,7 @@ namespace Perception.Engine
 				Control.PlayerCrouchAction.Enable();
 				Control.PlayerToggleCrouchAction.Enable();
 
-				GetComponent<CameraBob>().SuppressHeadbob = false;
+				//GetComponent<CameraBob>().SuppressHeadbob = false;
 				Motor.SetCapsuleCollisionsActivation(true);
 				Motor.SetGroundSolvingActivation(true);
 				Motor.SetMovementCollisionsSolvingActivation(true);
@@ -569,7 +496,7 @@ namespace Perception.Engine
 		public void DisableController()
 		{
 			_inputDisabled = true;
-			_moveInputVector = new Vector3(0,0,0);
+			_moveInputVector = new Vector3(0, 0, 0);
 		}
 
 		public void EnableController()
