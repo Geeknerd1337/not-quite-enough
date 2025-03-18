@@ -116,6 +116,7 @@ namespace Perception.Engine
 
 		public override void BuildInput()
 		{
+			this.Log("BuildInput");
 			if (_inputDisabled) return;
 			base.BuildInput();
 
@@ -128,6 +129,8 @@ namespace Perception.Engine
 			_inputs.Crouch = Control.PlayerCrouchAction.IsPressed();
 			_inputs.CrouchToggle = Control.PlayerToggleCrouchAction.WasPressedThisFrame();
 			_inputs.Jump = Control.PlayerJumpAction.IsPressed();
+
+			this.Log(_inputs.Horizontal);
 
 			var _cameraRotation = PlayerCamera.transform.rotation;
 			Vector3 cameraPlanarDirection = Vector3.ProjectOnPlane(_cameraRotation * Vector3.forward, Motor.CharacterUp).normalized;
@@ -149,10 +152,10 @@ namespace Perception.Engine
 
 			CheckCrouch();
 
-			if (Control.PlayerNoClipAction.WasPressedThisFrame())
-			{
-				ToggleNoClip();
-			}
+			// if (Control.PlayerNoClipAction.WasPressedThisFrame())
+			// {
+			// 	ToggleNoClip();
+			// }
 
 		}
 
@@ -206,10 +209,10 @@ namespace Perception.Engine
 			}
 
 			// If the player tries to run or release hold to crouch while it's toggled, untoggle.
-			if (IsRunning || Control.PlayerCrouchAction.WasReleasedThisFrame())
-			{
-				_crouchToggled = false;
-			}
+			// if (IsRunning || Control.PlayerCrouchAction.WasReleasedThisFrame())
+			// {
+			// 	_crouchToggled = false;
+			// }
 		}
 
 		private void Crouch()
@@ -397,10 +400,6 @@ namespace Perception.Engine
 				Crouch();
 			}
 
-			if (!DisableVoidRecovery)
-			{
-				CheckForVoidFall();
-			}
 		}
 
 		public bool IsColliderValidForCollisions(Collider coll)
@@ -461,37 +460,37 @@ namespace Perception.Engine
 			}
 		}
 
-		private void ToggleNoClip()
-		{
-			NoClip = !NoClip;
-			if (NoClip)
-			{
-				// Force uncrouch if needed.
-				if (IsCrouching)
-				{
-					_shouldBeCrouching = false;
-					_crouchToggled = false;
-					Uncrouch();
-				}
-				Control.PlayerCrouchAction.Disable();
-				Control.PlayerToggleCrouchAction.Disable();
+		// private void ToggleNoClip()
+		// {
+		// 	NoClip = !NoClip;
+		// 	if (NoClip)
+		// 	{
+		// 		// Force uncrouch if needed.
+		// 		if (IsCrouching)
+		// 		{
+		// 			_shouldBeCrouching = false;
+		// 			_crouchToggled = false;
+		// 			Uncrouch();
+		// 		}
+		// 		Control.PlayerCrouchAction.Disable();
+		// 		Control.PlayerToggleCrouchAction.Disable();
 
-				GetComponent<CameraBob>().SuppressHeadbob = true;
-				Motor.SetCapsuleCollisionsActivation(false);
-				Motor.SetGroundSolvingActivation(false);
-				Motor.SetMovementCollisionsSolvingActivation(false);
-			}
-			else
-			{
-				Control.PlayerCrouchAction.Enable();
-				Control.PlayerToggleCrouchAction.Enable();
+		// 		GetComponent<CameraBob>().SuppressHeadbob = true;
+		// 		Motor.SetCapsuleCollisionsActivation(false);
+		// 		Motor.SetGroundSolvingActivation(false);
+		// 		Motor.SetMovementCollisionsSolvingActivation(false);
+		// 	}
+		// 	else
+		// 	{
+		// 		Control.PlayerCrouchAction.Enable();
+		// 		Control.PlayerToggleCrouchAction.Enable();
 
-				//GetComponent<CameraBob>().SuppressHeadbob = false;
-				Motor.SetCapsuleCollisionsActivation(true);
-				Motor.SetGroundSolvingActivation(true);
-				Motor.SetMovementCollisionsSolvingActivation(true);
-			}
-		}
+		// 		//GetComponent<CameraBob>().SuppressHeadbob = false;
+		// 		Motor.SetCapsuleCollisionsActivation(true);
+		// 		Motor.SetGroundSolvingActivation(true);
+		// 		Motor.SetMovementCollisionsSolvingActivation(true);
+		// 	}
+		// }
 
 		public void DisableController()
 		{
