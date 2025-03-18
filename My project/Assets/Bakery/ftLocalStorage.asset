@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ca84e725c7c764aa5ed097918d14b7, type: 3}
+  m_Name: ftLocalStorage
+  m_EditorClassIdentifier: 
+  modifiedAssetPathList:
+  - Assets/Bakery/examples/content/sponza/sponza.FBX
+  - Assets/You Have Been Deleted/Models/Environment/Industrial/Shelves/src/Shelf.fbx
+  - Assets/You Have Been Deleted/Models/Hammer Import/fbx/playtest/pt_s0.fbx
+  - Assets/You Have Been Deleted/Models/Environment/Industrial/Forklift/src/Forklift.fbx
+  - Assets/NotQuiteEnough/Models/Environments/Apartment/Apartment.fbx
+  - Assets/NotQuiteEnough/Models/Environments/Props/Table/living room.fbx
+  modifiedAssetPaddingHash: d6a958ffd6ff1f6345e58fe5e55031ee38d1d35fd2ce78d3

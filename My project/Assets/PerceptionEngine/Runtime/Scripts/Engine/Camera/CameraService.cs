@@ -29,6 +29,9 @@ namespace Perception.Engine
         #region Private Members
         private Camera _camera;
         private Camera _viewmodelCamera;
+        public PostProcessLayer PostProcessingLayer;
+        public PostProcessResources PostProcessingResources;
+
 
         #endregion
 
@@ -58,6 +61,8 @@ namespace Perception.Engine
             _camera.renderingPath = RenderingPath.DeferredShading;
             //Make it so it doesn't render viewmodels
             _camera.cullingMask = ~LayerMask.GetMask(new string[] { "Viewmodel" });
+            _camera.depthTextureMode = DepthTextureMode.MotionVectors | DepthTextureMode.Depth | DepthTextureMode.DepthNormals;
+
 
             //Create a second camera which renders the viewmodel and UI
             //This is done this way because I want UI to be affected by post processing.
@@ -70,6 +75,17 @@ namespace Perception.Engine
             _viewmodelCamera.clearFlags = CameraClearFlags.Depth;
             _viewmodelCamera.depth = 1;
             _viewmodelCamera.cullingMask = LayerMask.GetMask(new string[] { "Viewmodel", "UI" });
+
+            PostProcessingLayer = viewmodelCamera.AddComponent<PostProcessLayer>();
+            PostProcessingLayer.Init(PostProcessingResources);
+            PostProcessingLayer.volumeLayer.value = LayerMask.GetMask("UI");
+            //Add a post processing layer to the camera
+            PostProcessingLayer.volumeTrigger = viewmodelCamera.transform;
+
+            var layerProxy = _camera.gameObject.AddComponent<PostProcessLayer>();
+            layerProxy.Init(PostProcessingResources);
+            layerProxy.volumeLayer.value = LayerMask.GetMask("Fog Proxy");
+            layerProxy.volumeTrigger = _camera.transform;
 
             //Since the camera persists between scenes, make it not destroy on load
             DontDestroyOnLoad(tripod);
