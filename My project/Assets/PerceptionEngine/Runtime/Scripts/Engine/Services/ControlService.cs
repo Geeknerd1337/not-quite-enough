@@ -36,6 +36,8 @@ namespace Perception.Engine
             PlayerUseAction = PlayerActions.Player.Use;
             PlayerPauseAction = PlayerActions.Player.Pause;
 
+            PlayerActions.Enable();
+
         }
 
         public override void Update()

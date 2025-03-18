@@ -10,6 +10,15 @@ namespace Perception.Engine
         {
             base.Start();
             gameObject.AddComponent<FirstpersonTripod>();
+            Controller = gameObject.GetComponent<PlayerController>();
         }
+
+        public override void BuildInput()
+        {
+            base.BuildInput();
+            Controller.BuildInput();
+        }
+
+
     }
 }

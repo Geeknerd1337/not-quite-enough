@@ -130,7 +130,7 @@ namespace Perception.Engine
 			_inputs.CrouchToggle = Control.PlayerToggleCrouchAction.WasPressedThisFrame();
 			_inputs.Jump = Control.PlayerJumpAction.IsPressed();
 
-			this.Log(_inputs.Horizontal);
+			this.Log(_movementInput);
 
 			var _cameraRotation = PlayerCamera.transform.rotation;
 			Vector3 cameraPlanarDirection = Vector3.ProjectOnPlane(_cameraRotation * Vector3.forward, Motor.CharacterUp).normalized;

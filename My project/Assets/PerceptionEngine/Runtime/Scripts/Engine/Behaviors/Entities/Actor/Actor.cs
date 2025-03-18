@@ -59,6 +59,12 @@ namespace Perception.Engine
             Health.TakeDamage(info);
         }
 
+        public override void Update()
+        {
+            base.Update();
+            BuildInput();
+        }
+
 
         public virtual void OnDeath(DamageInfo info)
         {
