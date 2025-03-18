@@ -20,7 +20,7 @@ namespace Perception.Engine
         {
             //Reset these values to 0 since we're using local rotation in the controller
             //This is important for moving platforms to work.
-            rotX = 0;
+
             rotX += x;
             rotY += y;
             rotY = Mathf.Clamp(rotY, -90f, 90f);
