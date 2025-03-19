@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b76884da51bb2d741965ae6889ca2472
+guid: 53c0502c24f2f574a84788e5700c6891
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -31,7 +31,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties:
-    - '#BAKERY{"meshName":["Plane","Plane.003","Plane.001","Fridge","Plane.004","Plane.002","defaultMaterial.006"],"padding":[3,34,34,35,12,16,44],"unwrapper":[0,0,0,0,0,0,0]}'
+    - '#BAKERY{"meshName":["Object_20","Object_19","Object_18","Object_17","Object_16","Object_15","Object_14","Object_13","Object_12","Object_11","Object_10","Object_9","Object_8","Object_7","Object_6","Object_5","Object_4","Object_3","Object_2"],"padding":[63,256,256,256,256,176,214,214,256,246,196,69,256,75,256,250,256,72,66],"unwrapper":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}'
     clipAnimations: []
     isReadable: 0
   meshes:

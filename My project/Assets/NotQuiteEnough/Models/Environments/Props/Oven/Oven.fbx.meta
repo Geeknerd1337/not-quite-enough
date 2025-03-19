@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b76884da51bb2d741965ae6889ca2472
+guid: 5c77d903b9a858240b5e2d4c53a39c96
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -30,8 +30,7 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    extraUserProperties:
-    - '#BAKERY{"meshName":["Plane","Plane.003","Plane.001","Fridge","Plane.004","Plane.002","defaultMaterial.006"],"padding":[3,34,34,35,12,16,44],"unwrapper":[0,0,0,0,0,0,0]}'
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 0
   meshes:
@@ -48,7 +47,7 @@ ModelImporter:
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1

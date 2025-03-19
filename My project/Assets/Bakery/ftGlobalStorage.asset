@@ -16,7 +16,14 @@ MonoBehaviour:
   - Assets/Bakery/examples/content/sponza/sponza.FBX
   - Assets/NotQuiteEnough/Models/Environments/Apartment/Apartment.fbx
   - Assets/NotQuiteEnough/Models/Environments/Props/Table/living room.fbx
-  modifiedAssetPaddingHash: d6a958ff38d1d35fd2ce78d3
+  - Assets/NotQuiteEnough/Models/Environments/Props/Round Table/Round_table_and_chairs.fbx
+  - Assets/NotQuiteEnough/Models/Environments/Props/Curtains/curtains.fbx
+  - Assets/NotQuiteEnough/Models/Environments/Props/ChinaCabinet/ChinaCabinet.fbx
+  - Assets/NotQuiteEnough/Models/Environments/Props/Door/SM_Door_low.fbx
+  - Assets/NotQuiteEnough/Models/Environments/Props/Sofa/sofa_03_4k.fbx
+  - Assets/NotQuiteEnough/Models/Environments/Props/Buffet/Buffet.fbx
+  - Assets/NotQuiteEnough/Models/Environments/Props/CofeeTable/CoffeeTable.fbx
+  modifiedAssetPaddingHash: d6a958ffbe90ad30d2ce78d3bef53dff1c7e9363377e9363b7f23a064adc894b5350ebd7d9398033
   modifiedMeshList: []
   modifiedMeshPaddingList: 
   modifiedAssets:
@@ -403,8 +410,12 @@ MonoBehaviour:
     - Plane
     - Plane.003
     - Plane.001
-    padding: 030000002200000022000000
-    unwrapper: 000000000000000000000000
+    - Fridge
+    - Plane.004
+    - Plane.002
+    - defaultMaterial.006
+    padding: 030000002200000022000000230000000c000000100000002c000000
+    unwrapper: 00000000000000000000000000000000000000000000000000000000
   - meshName:
     - group4
     - group2
@@ -413,6 +424,56 @@ MonoBehaviour:
     - pCube5
     padding: 3b0000003b0000003b0000003b00000029000000
     unwrapper: 0000000000000000000000000000000000000000
+  - meshName:
+    - Round_table
+    - Chair03
+    - Chair02
+    - Chair01
+    - Chair
+    padding: 2200000058000000580000005800000058000000
+    unwrapper: 0000000000000000000000000000000000000000
+  - meshName:
+    - "\u0426\u0438\u043B\u0438\u043D\u0434\u0440.001"
+    padding: 2b000000
+    unwrapper: 00000000
+  - meshName:
+    - jonnycrabb_the_curiosity_shop_victorian_display_cabinet_001
+    padding: 21000000
+    unwrapper: 00000000
+  - meshName:
+    - Door_low.002
+    padding: 28000000
+    unwrapper: 00000000
+  - meshName:
+    - sofa_03
+    padding: 10000000
+    unwrapper: 00000000
+  - meshName:
+    - Object_20
+    - Object_19
+    - Object_18
+    - Object_17
+    - Object_16
+    - Object_15
+    - Object_14
+    - Object_13
+    - Object_12
+    - Object_11
+    - Object_10
+    - Object_9
+    - Object_8
+    - Object_7
+    - Object_6
+    - Object_5
+    - Object_4
+    - Object_3
+    - Object_2
+    padding: 3f00000000010000000100000001000000010000b0000000d6000000d600000000010000f6000000c400000045000000000100004b00000000010000fa000000000100004800000042000000
+    unwrapper: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  - meshName:
+    - pCube10
+    padding: 23000000
+    unwrapper: 00000000
   assetList:
   - Assets/Bakery/examples/content/sponza/bush.FBX
   - Assets/Bakery/examples/content/floor_lamp.FBX
@@ -474,7 +535,18 @@ MonoBehaviour:
   - Assets/NotQuiteEnough/Models/Environments/Apartment/Apartment.fbx
   - Assets/NotQuiteEnough/Models/Environments/Props/Blinds/Blinds.fbx
   - Assets/NotQuiteEnough/Models/Environments/Props/Table/living room.fbx
-  uvOverlapAssetList: 0000000000000000000000000101000000000000000000000000000000000000010100000000000001010000000000000000000000000000000000000000000000000000010100000101000001010000010100000101000000000000000000000000000000000000ffffffff0000000000000000ffffffffffffffff0000000000000000ffffffff00000000000000000000000000000000ffffffff000000000000000000000000000000000101000000000000000000000000000001010000010100000101000001010000000000000000000000000000010100000101000000000000000000000101000001010000
+  - Assets/NotQuiteEnough/Models/Environments/Props/Round Table/Round_table_and_chairs.fbx
+  - Assets/NotQuiteEnough/Models/Environments/Props/Curtains/Shtora.fbx
+  - Assets/NotQuiteEnough/Models/Environments/Props/Curtains/curtains.fbx
+  - Assets/NotQuiteEnough/Models/Environments/Props/fridge/fridge.fbx
+  - Assets/NotQuiteEnough/Models/Environments/Props/ChinaCabinet/ChinaCabinet.fbx
+  - Assets/NotQuiteEnough/Models/Environments/Props/Door/SM_Door_low.fbx
+  - Assets/NotQuiteEnough/Models/Environments/Props/Sofa/sofa_03_4k.fbx
+  - Assets/NotQuiteEnough/Models/Environments/Props/Floor Lamp/FloorLamp.fbx
+  - Assets/NotQuiteEnough/Models/Environments/Props/Buffet/Buffet.fbx
+  - Assets/NotQuiteEnough/Models/Environments/Props/CofeeTable/CoffeeTable.fbx
+  - Assets/NotQuiteEnough/Models/Environments/Props/Oven/Oven.fbx
+  uvOverlapAssetList: 0000000000000000000000000101000000000000000000000000000000000000010100000000000001010000000000000000000000000000000000000000000000000000010100000101000001010000010100000101000000000000000000000000000000000000ffffffff0000000000000000ffffffffffffffff0000000000000000ffffffff00000000000000000000000000000000ffffffff0000000000000000000000000000000001010000000000000000000000000000010100000101000001010000010100000000000000000000000000000101000001010000000000000000000001010000010100000101000001010000010100000101000000000000010100000101000001010000010100000000000001010000
   xatlasWarningShown: 0
   foundCompatibleSetup: 1
   gpuName: NVIDIA GeForce RTX 4060 Ti
@@ -566,5 +638,5 @@ MonoBehaviour:
   renderSettingsRTPVWidth: 640
   renderSettingsRTPVHeight: 360
   tagOverrides: []
-  modifiedMeshPaddingArray: 3b0000003b0000003b0000003b00000029000000
-  modifiedMeshUnwrapperArray: 0000000000000000000000000000000000000000
+  modifiedMeshPaddingArray: 030000002200000022000000230000000c000000100000002c000000
+  modifiedMeshUnwrapperArray: 00000000000000000000000000000000000000000000000000000000

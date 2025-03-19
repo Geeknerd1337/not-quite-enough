@@ -110,7 +110,7 @@ namespace Perception.Engine
             {
                 //Pick a random player start
                 int index = UnityEngine.Random.Range(0, playerStart.Length);
-
+                this.Log(playerStart[index].transform.position);
                 //Spawn the player
                 Pawn = Instantiate(AssetService.GetResource<Entity>("Player"));
                 Pawn.transform.position = playerStart[index].transform.position;

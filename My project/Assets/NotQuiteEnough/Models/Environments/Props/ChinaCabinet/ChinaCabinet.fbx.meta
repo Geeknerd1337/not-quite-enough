@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b76884da51bb2d741965ae6889ca2472
+guid: 6ce90b03312eae94e81387ebe1a2f9c9
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -31,7 +31,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties:
-    - '#BAKERY{"meshName":["Plane","Plane.003","Plane.001","Fridge","Plane.004","Plane.002","defaultMaterial.006"],"padding":[3,34,34,35,12,16,44],"unwrapper":[0,0,0,0,0,0,0]}'
+    - '#BAKERY{"meshName":["jonnycrabb_the_curiosity_shop_victorian_display_cabinet_001"],"padding":[33],"unwrapper":[0]}'
     clipAnimations: []
     isReadable: 0
   meshes:
