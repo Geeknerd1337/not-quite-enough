@@ -110,7 +110,7 @@ namespace Perception.Engine
         public void Build()
         {
             _lastSetup.FieldOfView = 68f;
-            _lastSetup.ClipPlanes = new Vector2(0.1f, 700);
+            _lastSetup.ClipPlanes = new Vector2(0.1f, 1400);
             _lastSetup.Camera = _camera;
             _lastSetup.ViewModel.Angles = Quaternion.identity;
             _lastSetup.ViewModel.Offset = Vector3.zero;

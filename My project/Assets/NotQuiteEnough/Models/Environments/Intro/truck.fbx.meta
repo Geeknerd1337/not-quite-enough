@@ -31,7 +31,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties:
-    - '#BAKERY{"meshName":["Modern_Pickup_Truck_01_Wheel_RR","Modern_Pickup_Truck_01_Wheel_RL","Modern_Pickup_Truck_01_Wheel_FR","Modern_Pickup_Truck_01_Wheel_FL","Modern_Pickup_Truck_01_Steering","Modern_Pickup_Truck_01_Seat","Modern_Pickup_Truck_01_Lights","Modern_Pickup_Truck_01_Glass","Modern_Pickup_Truck_01"],"padding":[11,11,11,11,37,4,39,10,2],"unwrapper":[0,0,0,0,0,0,0,0,0]}'
+    - '#BAKERY{"meshName":["Modern_Pickup_Truck_01_Wheel_RR","Modern_Pickup_Truck_01_Wheel_RL","Modern_Pickup_Truck_01_Wheel_FR","Modern_Pickup_Truck_01_Wheel_FL","Modern_Pickup_Truck_01_Steering","Modern_Pickup_Truck_01_Seat","Modern_Pickup_Truck_01_Lights","Modern_Pickup_Truck_01_Glass","Modern_Pickup_Truck_01"],"padding":[6,6,6,6,20,2,21,5,1],"unwrapper":[0,0,0,0,0,0,0,0,0]}'
     clipAnimations: []
     isReadable: 0
   meshes:
