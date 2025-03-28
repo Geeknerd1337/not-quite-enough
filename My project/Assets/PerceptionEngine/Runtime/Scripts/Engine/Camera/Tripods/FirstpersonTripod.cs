@@ -6,6 +6,9 @@ namespace Perception.Engine
 {
     public class FirstpersonTripod : Tripod
     {
+        public Transform TargetOverride;
+
+
         public override void OnTripodBuild(ref Setup setup)
         {
             var ply = GameManager.Pawn as Player;
@@ -14,6 +17,12 @@ namespace Perception.Engine
             {
                 MouseRotateEyes(ply);
                 setup.Position = ply.Eyes.position;
+                setup.Rotation = ply.Eyes.rotation;
+            }
+            else if (TargetOverride != null)
+            {
+                MouseRotateEyes(ply);
+                setup.Position = TargetOverride.position;
                 setup.Rotation = ply.Eyes.rotation;
             }
         }
@@ -33,5 +42,17 @@ namespace Perception.Engine
             p.Eyes.localRotation = yQuat;
 
         }
+
+        public void SetTargetOverride(Transform target)
+        {
+            TargetOverride = target;
+        }
+
+        public void ClearTargetOverride()
+        {
+            TargetOverride = null;
+        }
+
+
     }
 }
