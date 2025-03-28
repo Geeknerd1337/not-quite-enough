@@ -21,10 +21,7 @@ namespace Perception.Engine
             return new Color(input.r, input.g, value, input.a);
         }
 
-        public static Color WithAlpha(this Color input, float value)
-        {
-            return new Color(input.r, input.g, input.b, value);
-        }
+
 
         public static Color LerpTo(this Color input, Color b, float t)
         {

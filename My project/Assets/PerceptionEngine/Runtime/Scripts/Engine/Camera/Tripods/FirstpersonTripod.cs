@@ -13,13 +13,15 @@ namespace Perception.Engine
         {
             var ply = GameManager.Pawn as Player;
 
-            if (ply != null)
+            if (ply != null && TargetOverride == null)
             {
                 MouseRotateEyes(ply);
                 setup.Position = ply.Eyes.position;
                 setup.Rotation = ply.Eyes.rotation;
             }
-            else if (TargetOverride != null)
+
+
+            if (TargetOverride != null)
             {
                 MouseRotateEyes(ply);
                 setup.Position = TargetOverride.position;

@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Perception.Engine;
+using Unity.VisualScripting;
 
 public class IntroLevel : MonoBehaviour
 {
 
     public SoundObject CarAudio;
+
+    public Transform Camera;
+
+    public AnimationCurve FadeCurve;
 
 
     // Start is called before the first frame update
@@ -19,11 +24,16 @@ public class IntroLevel : MonoBehaviour
         var player = GameManager.Pawn as Player;
         var controller = player.GetComponent<PlayerController>();
         controller.DisableController();
+
+        FadeCanvas.FadeTo(Color.black.WithAlpha(1f), Color.black.WithAlpha(0f), 5f, FadeCurve);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        var player = GameManager.Pawn as Player;
+        var tripod = player.gameObject.GetComponent<FirstpersonTripod>();
+        tripod.SetTargetOverride(Camera);
     }
 }

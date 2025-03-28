@@ -116,7 +116,6 @@ namespace Perception.Engine
 
 		public override void BuildInput()
 		{
-			this.Log("BuildInput");
 			if (_inputDisabled) return;
 			base.BuildInput();
 
