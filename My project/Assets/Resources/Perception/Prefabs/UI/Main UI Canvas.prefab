@@ -804,13 +804,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4112879470365288172}
+  - component: {fileID: 39217110682114867}
   m_Layer: 5
   m_Name: Dialog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4112879470365288172
 RectTransform:
   m_ObjectHideFlags: 0
@@ -833,6 +834,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 105.9}
   m_SizeDelta: {x: 800, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &39217110682114867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7886768983293988867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78a15f32809dce8429097eeb78254488, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8476708298535920141
 GameObject:
   m_ObjectHideFlags: 0
