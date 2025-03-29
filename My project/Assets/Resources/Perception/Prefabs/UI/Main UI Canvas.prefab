@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 3459356665130739882}
   - component: {fileID: 3508328336764145635}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Speaker Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 7783900983597884218}
   - component: {fileID: 7074496459848504343}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Speaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 5401078814335449128}
   - component: {fileID: 8659071717555568525}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Dialog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -810,7 +810,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4112879470365288172
 RectTransform:
   m_ObjectHideFlags: 0
@@ -830,7 +830,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 117.4}
+  m_AnchoredPosition: {x: 0, y: 105.9}
   m_SizeDelta: {x: 800, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8476708298535920141
@@ -845,7 +845,7 @@ GameObject:
   - component: {fileID: 3129745175415906125}
   - component: {fileID: 2779608772765833197}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Dialog Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -62,6 +62,7 @@ namespace Perception.Engine
             //Make it so it doesn't render viewmodels
             _camera.cullingMask = ~LayerMask.GetMask(new string[] { "Viewmodel" });
             _camera.depthTextureMode = DepthTextureMode.MotionVectors | DepthTextureMode.Depth | DepthTextureMode.DepthNormals;
+            _camera.farClipPlane = 1400f;
 
 
             //Create a second camera which renders the viewmodel and UI
