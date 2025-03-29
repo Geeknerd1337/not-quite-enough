@@ -13,6 +13,7 @@ public class IntroLevel : MonoBehaviour
 
     public AnimationCurve FadeCurve;
 
+    public DialogData IntroDialog;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,14 @@ public class IntroLevel : MonoBehaviour
 
         FadeCanvas.FadeTo(Color.black.WithAlpha(1f), Color.black.WithAlpha(0f), 5f, FadeCurve);
 
+        StartCoroutine(StartDialog());
+
+    }
+
+    public IEnumerator StartDialog()
+    {
+        yield return new WaitForSeconds(5f);
+        DialogManager.StartDialog(IntroDialog);
     }
 
     // Update is called once per frame

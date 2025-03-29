@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using Perception.Engine;
 [CreateAssetMenu(fileName = "New Dialog", menuName = "Dialog/Dialog Data")]
 public class DialogData : ScriptableObject
 {
@@ -15,4 +15,6 @@ public class DialogData : ScriptableObject
     }
 
     public DialogLine[] dialogLines;
+
+    public SoundObject DialogSound;
 }

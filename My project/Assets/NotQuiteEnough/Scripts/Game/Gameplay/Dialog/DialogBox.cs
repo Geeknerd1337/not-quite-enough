@@ -12,7 +12,8 @@ public class DialogBox : MonoBehaviour
     public DialogData DialogData;
     public float DialogSpeed = 0.05f; // Time between characters
     public int CharacterSkip = 1; // How many characters to reveal at once
-    public SoundObject DialogSound;
+    public int AudioSkip = 1; // How many characters to reveal at once
+
 
     // Animation parameters
     public float SlideDistance = 100f;
@@ -52,7 +53,7 @@ public class DialogBox : MonoBehaviour
         {
             elapsed += Time.deltaTime;
             float t = elapsed / AnimationDuration;
-            rectTransform.anchoredPosition = Vector2.Lerp(startPos, endPos, t);
+            rectTransform.anchoredPosition = Vector2.Lerp(startPos, endPos, Easing.Cubic.InOut(t));
             yield return null;
         }
 
@@ -81,9 +82,12 @@ public class DialogBox : MonoBehaviour
         for (int i = 0; i < fullText.Length; i += CharacterSkip)
         {
             Text.text = fullText.Substring(0, Mathf.Min(i + CharacterSkip, fullText.Length));
-            if (DialogSound != null)
+            if (DialogData.DialogSound != null)
             {
-                DialogSound.Play();
+                if (i % AudioSkip == 0)
+                {
+                    PerceptionAudio.FromScreen(DialogData.DialogSound);
+                }
             }
             yield return new WaitForSeconds(DialogSpeed);
         }
@@ -117,14 +121,14 @@ public class DialogBox : MonoBehaviour
     private IEnumerator EndDialog()
     {
         Vector2 startPos = rectTransform.anchoredPosition;
-        Vector2 endPos = new Vector2(startPos.x, startPos.y - SlideDistance);
+        Vector2 endPos = new Vector2(startPos.x, -200f);
         float elapsed = 0f;
 
         while (elapsed < AnimationDuration)
         {
             elapsed += Time.deltaTime;
             float t = elapsed / AnimationDuration;
-            rectTransform.anchoredPosition = Vector2.Lerp(startPos, endPos, t);
+            rectTransform.anchoredPosition = Vector2.Lerp(startPos, endPos, Easing.Cubic.InOut(t));
             yield return null;
         }
 
