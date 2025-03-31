@@ -10266,3 +10266,5 @@ Running halffloat2hdr "C:\Users\JOSHUA~1\AppData\Local\Temp\frender/01_LM0_final
 Running halffloat2hdr "C:\Users\JOSHUA~1\AppData\Local\Temp\frender/01_LMA5_final_HDR.lz4" "D:/Github/not-quite-enough/My project/Assets/BakeryLightmaps/01_LMA5_final.hdr" 1024
 Running halffloat2hdr "C:\Users\JOSHUA~1\AppData\Local\Temp\frender/01_LMA6_final_HDR.lz4" "D:/Github/not-quite-enough/My project/Assets/BakeryLightmaps/01_LMA6_final.hdr" 1024
 Running halffloat2hdr "C:\Users\JOSHUA~1\AppData\Local\Temp\frender/01_LMA1_final_HDR.lz4" "D:/Github/not-quite-enough/My project/Assets/BakeryLightmaps/01_LMA1_final.hdr" 1024
+[main 2025-03-30T05:43:12.776Z] Extension host with pid 30652 exited with code: 0, signal: unknown.
+[main 2025-03-30T05:50:37.268Z] Extension host with pid 147848 exited with code: 0, signal: unknown.
