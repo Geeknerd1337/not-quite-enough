@@ -34,8 +34,8 @@ ModelImporter:
     - '#BAKERY{"meshName":["Human.teeth_base","Human.short01","Human.shoes01","Human.male_casualsuit01","Human.low-poly","Human.eyebrow001","Human"],"padding":[216,86,55,21,256,256,50],"unwrapper":[0,0,0,0,0,0,0]}'
     clipAnimations:
     - serializedVersion: 16
-      name: Human.rig|Idle
-      takeName: Human.rig|Idle
+      name: Rigify_Human|Idle
+      takeName: Rigify_Human|Idle
       internalID: -2168076435474448898
       firstFrame: 0
       lastFrame: 0
@@ -63,11 +63,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Human.rig|Truck_Sit
-      takeName: Human.rig|Truck_Sit
+      name: Rigify_Human|Truck_Sit
+      takeName: Rigify_Human|Truck_Sit
       internalID: 5417939295426827333
       firstFrame: 0
-      lastFrame: 19
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
